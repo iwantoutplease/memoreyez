@@ -18,10 +18,19 @@ import cv2
    
    ****$python face_detect.py abba.png haarcascade_frontalface_default.xml***** <--- this is to check in a shell...(https://realpython.com)
    
-***contact list***
+***contact list lines 21-25***
 def get_contact (contact, user_guide):
 get_contact_url = "htpp:/" + "ip"
 def create_contact (name, last_name, phone_number, description) + import line 16
 create_contact_url = "http://" + "ip" 
 
 ***no idea how to test or if it is close to being accuate****
+
+***alerting a device***
+match found= [line 16 + line 24]
+class device (models.model)+ (phone number)
+serial number = models.uuidfeild()
+if [line 16 + line 24] = true (send txt)
+send txt = line 31
+
+
