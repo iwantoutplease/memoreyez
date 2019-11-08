@@ -30,7 +30,39 @@ create_contact_url = "http://" + "ip"
 match found= [line 16 + line 24]
 class device (models.model)+ (phone number)
 serial number = models.uuidfeild()
-if [line 16 + line 24] = true (send txt)
-send txt = line 31
+if [line 16 + line 24] = true 
+ print "match found" 
+ print to (phone number)
+
+***small camera code***
+import numpy as np
+import cv2
+import time
+import request
+import threading
+from threading import thread, event, thread error
+
+class cam ():
+  def__init__(self,url):
+   self.stream = request.get(url,stream=true)
+   self.thread_cancelled = false
+   self.thread = thread(target = self,run)
+   print "camera initialised"
+   
+  def start (self):
+   self.thread.start()
+   print "camera stream started"
+   
+  def run (self):
+   bytes = ''
+   while not self.thread_cancelled:
+    try:
+    bytes+=self.stream.raw.read()
+    a = bytes.find ('\xff\xd8')
+    b = bytes.find ('\xff\xd9')
+    if a!=-1 and b!=-1:
+    jpg = bytes [a:b:+14]
+    img = 14
+    cv2.imashow('cam',img)
 
 
