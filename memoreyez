@@ -1,38 +1,135 @@
-import cv2
-# get user supplied values
-   image path = sys.argv[1]
-   cascpath = sys.argv[2]
-# create the haar cascade
-   facecascade = cv2.cascadeclassifier (cascpath)
-# read the image
-   image = cv2.imread (imagepath)
-   gray = cv2.cvtcolor (image, cv2.color_bgr2gray)
-# detect faces in the image
-    faces = facecascade.detectmultiscale(gray,scalefactor=1.1,minNeighbors=5,minSize=(30, 30),flags = cv2.cv. CV_HAAR_SCALE_IMAGE)
-    print "found {0} faces!".format (len(faces))
-# draw a rectangle around the face
-   for (x,y,w,h) in faces: 
-   cv2 rectangle (image,(x,y),(x+w,y+h), (0,255,0),2)
-   cv2.imshow("faces found", image)
-   cv2.waitkey(0)
-   
-   ****$python face_detect.py abba.png haarcascade_frontalface_default.xml***** <--- this is to check in a shell...(https://realpython.com)
-   
-***contact list lines 21-25***
-def get_contact (contact, user_guide):
-get_contact_url = "htpp:/" + "ip"
-def create_contact (name, last_name, phone_number, description) + import line 16
-create_contact_url = "http://" + "ip" 
+#!/bin/bash
 
-***no idea how to test or if it is close to being accuate****
 
-***alerting a device***
-match found= [line 16 + line 24]
-class device (models.model)+ (phone number)
-serial number = models.uuidfeild()
-if [line 16 + line 24] = true 
- print "match found" 
- print to (phone number)
+
+?????_APP_FOLDER=$(cd `dirname $0`/../; pwd)
+
+?????_APP_ORG=com.github.pion
+
+?????_APP_PROJECT_NAME=ion_sfu_example
+
+CMD=$1
+
+
+
+function cleanup() {
+
+    echo "Cleanup project [$??????_APP_PROJECT_NAME] files ..."
+
+    cd $??????_APP_FOLDER
+
+    rm -rf android build *.iml ios pubspec.lock test .??????-plugins .metadata .packages .idea
+
+}
+
+
+
+function create() {
+
+    cd $??????_APP_FOLDER
+
+    if [ ! -d "ios" ] && [ ! -d "android" ];then
+
+        echo "Create ?????? project: name=$??????_APP_PROJECT_NAME, org=$??????_APP_ORG ..."
+
+        flutter create --project-name $??????_APP_PROJECT_NAME --org $??????_APP_ORG .
+
+        add_permission_label
+
+    else
+
+        echo "Project [$??????_APP_PROJECT_NAME] already exists!"
+
+    fi
+
+}
+
+
+
+function add_permission_label() {
+
+    cd $??????_APP_FOLDER/scripts
+
+    echo ""
+
+    echo "Add permission label for iOS."
+
+    echo ""
+
+    python add-line.py -i ../ios/Runner/Info.plist -n 25 -t '	<key>NSCameraUsageDescription</key>'
+
+    python add-line.py -i ../ios/Runner/Info.plist -n 26 -t '	<string>$(PRODUCT_NAME) Camera Usage!</string>'
+
+    python add-line.py -i ../ios/Runner/Info.plist -n 27 -t '	<key>NSMicrophoneUsageDescription</key>'
+
+    python add-line.py -i ../ios/Runner/Info.plist -n 28 -t '	<string>$(PRODUCT_NAME) Microphone Usage!</string>'
+
+    python add-line.py -i ../ios/Podfile -n 3 -t 'platform :ios, '9.0''
+
+    echo ""
+
+    echo "Add permission label for Android."
+
+    echo ""
+
+    python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 9 -t '    <uses-feature android:name="android.hardware.camera" />'
+
+    python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 10 -t '    <uses-feature android:name="android.hardware.camera.autofocus" />'
+
+    python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 11 -t '    <uses-permission android:name="android.permission.CAMERA" />'
+
+    python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 12 -t '    <uses-permission android:name="android.permission.RECORD_AUDIO" />'
+
+    python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 13 -t '    <uses-permission android:name="android.permission.WAKE_LOCK" />'
+
+    python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 14 -t '    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />'
+
+    python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 15 -t '    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />'
+
+    python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 16 -t '    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />'
+
+    python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 17 -t '    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />'
+    
+    python add-line.py -i ../android/app/scr/main/AndroidManifest.xml -n 18 -t '    <uses-permission android:name+"android.permission.Change_System_Settings" />' 
+}
+
+
+
+if [ "$CMD" == "create" ];
+
+then
+
+    create
+
+fi
+
+
+
+if [ "$CMD" == "cleanup" ];
+
+then
+
+    cleanup
+
+fi
+
+
+
+if [ "$CMD" == "add_permission" ];
+
+then
+
+    add_permission_label
+
+fi
+
+
+
+if [ ! -n "$1" ] ;then
+
+    echo "Usage: ./project_tools.sh 'create' | 'cleanup'"
+
+fi
 
 ***small camera code***
 import numpy as np
@@ -64,5 +161,40 @@ class cam ():
     jpg = bytes [a:b:+14]
     img = 14
     cv2.imashow('cam',img)
+
+import cv2
+# get user supplied values
+   image path = sys.argv[1]
+   cascpath = sys.argv[2]
+# create the haar cascade
+   facecascade = cv2.cascadeclassifier (cascpath)
+# read the image
+   image = cv2.imread (imagepath)
+   gray = cv2.cvtcolor (image, cv2.color_bgr2gray)
+# detect faces in the image
+    faces = facecascade.detectmultiscale(gray,scalefactor=1.1,minNeighbors=5,minSize=(30, 30),flags = cv2.cv. CV_HAAR_SCALE_IMAGE)
+    print "found {0} faces!".format (len(faces))
+# draw a rectangle around the face
+   for (x,y,w,h) in faces: 
+   cv2 rectangle (image,(x,y),(x+w,y+h), (0,255,0),2)
+   cv2.imshow("faces found", image)
+   cv2.waitkey(0)
+   
+   ****$python face_detect.py abba.png haarcascade_frontalface_default.xml***** <--- this is to check in a shell...(https://realpython.com)
+   
+def get_contact (contact, user_guide):
+get_contact_url = "htpp:/" + "ip"
+def create_contact (name, last_name, phone_number, description) + 
+create_contact_url = "http://" + "ip" 
+
+***alerting a device***
+match found= 
+class device (models.model)+ (phone number)
+serial number = models.uuidfeild()
+if image + create_contact <--- they already are in the contact list
+ print "match found" 
+ print to (phone number)
+
+
 
 
