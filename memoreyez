@@ -2,21 +2,20 @@
 
 
 
-?????_APP_FOLDER=$(cd `dirname $0`/../; pwd)
+memoreyez_APP_FOLDER=$(cd `dirname $0`/../; pwd)
 
-?????_APP_ORG=com.github.pion
+memoreyez_APP_ORG=com.github.pion
 
-?????_APP_PROJECT_NAME=ion_sfu_example
+MEMOREYEZ_APP_PROJECT_NAME=ion_sfu_example
 
 CMD=$1
 
 
+ cleanup() {
 
-function cleanup() {
+    echo "Cleanup project [$MEMOREYEZ_APP_PROJECT_NAME] files ..."
 
-    echo "Cleanup project [$??????_APP_PROJECT_NAME] files ..."
-
-    cd $??????_APP_FOLDER
+    cd $MEMOREYEZ_APP_FOLDER
 
     rm -rf android build *.iml ios pubspec.lock test .??????-plugins .metadata .packages .idea
 
@@ -24,11 +23,11 @@ function cleanup() {
 
 
 
-function create() {
+ create() {
 
     cd $??????_APP_FOLDER
 
-    if [ ! -d "ios" ] && [ ! -d "android" ];then
+     [ ! -d "ios" ] && [ ! -d "android" ];then
 
         echo "Create ?????? project: name=$??????_APP_PROJECT_NAME, org=$??????_APP_ORG ..."
 
@@ -36,19 +35,19 @@ function create() {
 
         add_permission_label
 
-    else
+    
 
         echo "Project [$??????_APP_PROJECT_NAME] already exists!"
 
-    fi
+    
 
 }
 
 
 
-function add_permission_label() {
+ add_permission_label() {
 
-    cd $??????_APP_FOLDER/scripts
+    cd $MEMOREYEZ_APP_FOLDER/scripts
 
     echo ""
 
@@ -95,41 +94,40 @@ function add_permission_label() {
 
 
 
-if [ "$CMD" == "create" ];
+ [ "$CMD" == "create" ];
 
-then
+
 
     create
 
-fi
 
 
 
-if [ "$CMD" == "cleanup" ];
 
-then
+ [ "$CMD" == "cleanup" ];
+
+
 
     cleanup
 
-fi
 
 
 
-if [ "$CMD" == "add_permission" ];
 
-then
+ [ "$CMD" == "add_permission" ];
+
 
     add_permission_label
 
-fi
 
 
 
-if [ ! -n "$1" ] ;then
+
+  [ ! -n "$1" ] ;then
 
     echo "Usage: ./project_tools.sh 'create' | 'cleanup'"
 
-fi
+
 
 ***small camera code***
 import numpy as np
@@ -141,8 +139,8 @@ from threading import thread, event, thread error
 
 class cam ():
   def__init__(self,url):
-   self.stream = request.get(url,stream=true)
-   self.thread_cancelled = false
+   self.stream = request.get(url,stream)
+   self.thread_cancelled = ()
    self.thread = thread(target = self,run)
    print "camera initialised"
    
@@ -152,14 +150,14 @@ class cam ():
    
   def run (self):
    bytes = ''
-   while not self.thread_cancelled:
+    not self.thread_cancelled:
     try:
     bytes+=self.stream.raw.read()
     a = bytes.find ('\xff\xd8')
     b = bytes.find ('\xff\xd9')
-    if a!=-1 and b!=-1:
-    jpg = bytes [a:b:+14]
-    img = 14
+    a!=-1 and b!=-1:
+    jpg = bytes [a:b:]
+    
     cv2.imashow('cam',img)
 
 import cv2
@@ -175,23 +173,23 @@ import cv2
     faces = facecascade.detectmultiscale(gray,scalefactor=1.1,minNeighbors=5,minSize=(30, 30),flags = cv2.cv. CV_HAAR_SCALE_IMAGE)
     print "found {0} faces!".format (len(faces))
 # draw a rectangle around the face
-   for (x,y,w,h) in faces: 
+    (x,y,w,h) faces: 
    cv2 rectangle (image,(x,y),(x+w,y+h), (0,255,0),2)
    cv2.imshow("faces found", image)
    cv2.waitkey(0)
    
-   ****$python face_detect.py abba.png haarcascade_frontalface_default.xml***** <--- this is to check in a shell...(https://realpython.com)
+   $python face_detect.py abba.png haarcascade_frontalface_default.xml -- this is to check a shell...(https://realpython.com)
    
 def get_contact (contact, user_guide):
 get_contact_url = "htpp:/" + "ip"
 def create_contact (name, last_name, phone_number, description) + 
 create_contact_url = "http://" + "ip" 
 
-***alerting a device***
-match found= 
+alerting a device
+match found= jpg
 class device (models.model)+ (phone number)
-serial number = models.uuidfeild()
-if image + create_contact <--- they already are in the contact list
+serial number = models.uuidfeild() 
+image + create_contact <--- they already are the contact list
  print "match found" 
  print to (phone number)
 
