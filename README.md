@@ -1,4 +1,4 @@
-# trial
-Trial
-Goal is to have a small camera to be worn at all time (size of a shirt button) that captures fascial recognition of the people you meet and adds them to your contact list. Next time you meet the same person your phone or smart watch alerts you and lets you know who it is along with the last time you met them and where. 
-I have no computer experience and no knowledge of programming so all of this is new to me, I am trying to learn as I hopefully develop this program.
+memoreyez
+Goal is to have a bluetooth earpeice with a camera that records the people that you meet, and adds them to your contact list. The next time you see the same person for it to tell you who the person is and how you know them. It could also be used to record their correct name for people who have hearing issues, be the eyes for a person who is blind, or just help everyone in general. 
+I have no computer experience and no knowledge of programming so all of this is new to me, I am trying to learn as I hopefully develop this program. Since I am completely new to all this I am not completely sure what machine learning is or how to add it to this program, but I believe it could be used to help determine which picture to capture and recognize the person the next time you see them. Be gentle on critisms this is my first attempt at anything and I know it needs a lot of work.
+original idea did not include the earpeice so I have to change the camera code, I need to build an app to support it, and probably a hundred more things to get this idea even close to working.
