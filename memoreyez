@@ -25,19 +25,19 @@ CMD=$1
 
  create() {
 
-    cd $??????_APP_FOLDER
+    cd $MEMOREYEZ_APP_FOLDER
 
      [ ! -d "ios" ] && [ ! -d "android" ];then
 
-        echo "Create ?????? project: name=$??????_APP_PROJECT_NAME, org=$??????_APP_ORG ..."
+        echo "Create Memoreyez project: name=$MEMOREYEZ_APP_PROJECT_NAME, org=$MEMOREYEZ_APP_ORG ..."
 
-        flutter create --project-name $??????_APP_PROJECT_NAME --org $??????_APP_ORG .
+        flutter create --project-name $MEMOREYEZ_APP_PROJECT_NAME --org $MEMOREYEZ_APP_ORG .
 
         add_permission_label
 
     
 
-        echo "Project [$??????_APP_PROJECT_NAME] already exists!"
+        echo "Project [$MEMOREYEZ_APP_PROJECT_NAME] already exists!"
 
     
 
@@ -126,10 +126,16 @@ CMD=$1
   [ ! -n "$1" ] ;then
 
     echo "Usage: ./project_tools.sh 'create' | 'cleanup'"
+    
+    
+---bluetooth code---
+import bluetooth, subprocess
+nearby_devices = bluetooth. discover_devices(duration=4,lookup_names= true,
+lookup_class= false)
 
 
 
-***small camera code***
+---small camera code---
 import numpy as np
 import cv2
 import time
