@@ -185,7 +185,27 @@ import cv2
    cv2.waitkey(0)
    
    $python face_detect.py abba.png haarcascade_frontalface_default.xml -- this is to check a shell...(https://realpython.com)
-   
+ 
+ ---need to add lip reading software with usage of microphone to insert correct name machine learning---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ----need to add machine learning to select the best 5 pictures video stream so client to pick the profile picture---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ---need to add link to google contact list----
+ 
 def get_contact (contact, user_guide):
 get_contact_url = "htpp:/" + "ip"
 def create_contact (name, last_name, phone_number, description) + 
