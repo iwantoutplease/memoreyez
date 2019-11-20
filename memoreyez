@@ -2,9 +2,9 @@
 
 
 
-memoreyez_APP_FOLDER=$(cd `dirname $0`/../; pwd)
+memoreyez_APP_FOLDER=$(https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml)
 
-memoreyez_APP_ORG=com.github.pion
+memoreyez_APP_ORG=https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml
 
 MEMOREYEZ_APP_PROJECT_NAME=ion_sfu_example
 
@@ -188,6 +188,12 @@ import cv2
  
  ---need to add lip reading software with usage of microphone to insert correct name machine learning---
  
+ duration = 5 # minutes
+ myrecording = sd.rec (int(duration + fs) . samplerate=fs. channels=1)
+ sd.default.samplerate = fs
+ sd.default.channels=1
+ sd.wait()
+stream.read()
  
  
  
@@ -196,7 +202,7 @@ import cv2
  
  
  
- ----need to add machine learning to select the best 3 pictures video stream so client to pick the profile picture---
+ ----need to add machine learning to select the best three pictures video stream so client to pick the profile picture---
  
  
  
@@ -263,6 +269,12 @@ serial number = models.uuidfeild()
 image + create_contact <--- they already are the contact list
  print "match found" 
  print to (phone number)
+stream.writer()
+sd.play(myarray,fs)
+sd.stop()
+
+outputstream
+
 
 
 
