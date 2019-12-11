@@ -132,7 +132,14 @@ CMD=$1
 import bluetooth, subprocess
 nearby_devices = bluetooth. discover_devices(duration=4,lookup_names= true,
 lookup_class= false)
-
+ if state == "CONNECTING":
+        print "Connecting", msg
+    elif state == "CONNECTION_FAILED":
+        print "Connection failed", msg
+    elif state == "CONNECTED":
+        print "Connected", msg
+    elif state == "DISCONNECTED":
+        print "Disconnected", msg
 
 
 ---small camera code---
