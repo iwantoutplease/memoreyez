@@ -408,7 +408,7 @@ if __name__=="__main__":
  Scopes =['https:www.googleapis.com/auth/documents.readonly']
  
  # the ID of a sample document
- Document_ID = '195j9eDD3ccfjQRttHhJPymLJUCOUjs-jmwTrekvdjFE'
+ Document_ID = '???????????'
  def main():
     """shows basic usage of the Dos Api.
        Prints the title of a sample document."""
@@ -448,12 +448,12 @@ def create_contact (name, last_name, phone_number, description) +
 create_contact_url = "http://" + "ip" 
 
 alerting a device
-match found= jpg
+match found= img
 class device (models.model)+ (phone number)
 serial number = models.uuidfeild() 
 image + create_contact <--- they already are the contact list
  print "match found" 
- print to (phone number)
+ print to (device)
 stream.writer()
 sd.play(myarray,fs)
 sd.stop()
