@@ -448,10 +448,11 @@ def create_contact (name, last_name, phone_number, description) +
 create_contact_url = "http://" + "ip" 
 
 alerting a device
-match found= img
+if img = no match
+###create 3 pictures to pick from?
 class device (models.model)+ (phone number)
 serial number = models.uuidfeild() 
-image + create_contact <--- they already are the contact list
+elif img + create_contact = true
  print "match found" 
  print to (device)
 stream.writer()
