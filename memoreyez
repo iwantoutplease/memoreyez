@@ -17,9 +17,9 @@ CMD=$1
 
     cd $MEMOREYEZ_APP_FOLDER
 
-    rm -rf android build *.iml ios pubspec.lock test .??????-plugins .metadata .packages .idea
+    rm -rf android build *.iml ios pubspec.lock test .??????-plugins .metadata .packages .idea  }
 
-}
+
 
 
 
@@ -37,11 +37,7 @@ CMD=$1
 
     
 
-        echo "Project [$MEMOREYEZ_APP_PROJECT_NAME] already exists!"
-
-    
-
-}
+        echo "Project [$MEMOREYEZ_APP_PROJECT_NAME] already exists!"  }  
 
 
 
@@ -100,28 +96,15 @@ CMD=$1
 
     create
 
-
-
-
-
  [ "$CMD" == "cleanup" ];
 
-
-
     cleanup
-
-
-
 
 
  [ "$CMD" == "add_permission" ];
 
 
     add_permission_label
-
-
-
-
 
   [ ! -n "$1" ] ;then
 
@@ -222,8 +205,6 @@ from data.load_video import load_video_frames
 
 config = load_args()
 
-
-
 class ListGenerator:
 
 
@@ -254,7 +235,7 @@ class ListGenerator:
 
     if self.all_samples.ndim == 1:
 
-      self.all_samples = self.all_samples[None,:] # only one sample, expand batch dim
+    self.all_samples = self.all_samples[None,:] # only one sample, expand batch dim
 
     assert self.all_samples.size > 0, "No samples found, please check the paths"
 
@@ -270,7 +251,7 @@ class ListGenerator:
 
     self.label_vectorizer = SentenceVectorizer(label_maxlen=config.maxlen,
 
-                                               transcribe_digits=config.transcribe_digits)
+            transcribe_digits=config.transcribe_digits)
 
 
 
@@ -310,19 +291,18 @@ class ListGenerator:
 
       frames = load_video_frames( os.path.join(self.data_path, vid),
 
-                                  maxlen=config.maxlen,
+             maxlen=config.maxlen,
 
-                                  pad_mode=config.pad_mode,
+             pad_mode=config.pad_mode,
 
-                                  grayscale=config.img_channels == 1
+             grayscale=config.img_channels == 3
 
-                                  )
+                    
+            video_frames.append(frames)
 
-      video_frames.append(frames)
+            labels_batch.append(label)
 
-      labels_batch.append(label)
-
-      cnt+=1
+            cnt+=1
 
 
 
@@ -346,16 +326,9 @@ class ListGenerator:
 
     path = path.replace(file_extension,'')
 
-    return path
+    return path 
  
- 
- 
- 
- 
- 
- 
- 
- ----need to add machine learning to select the best three pictures video stream so client to pick the profile picture---
+ ###need to add machine learning to select the best three pictures video stream so client to pick the profile picture###
  
  
 import cv2
@@ -396,13 +369,10 @@ def main():
  
 if __name__=="__main__":
     main()
+  
  
  
- 
- 
- 
- 
- ---google api acct---
+ ##google api acct##
  
  $pip install --upgrade googgle api-python-client google-auth-oathlib
  from__future__ import print_function
