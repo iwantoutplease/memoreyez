@@ -129,7 +129,7 @@ CMD=$1
     echo "Usage: ./project_tools.sh 'create' | 'cleanup'"
     
     
----bluetooth code---
+###bluetooth code###
 import bluetooth, subprocess
 nearby_devices = bluetooth. discover_devices(duration=4,lookup_names= true,
 lookup_class= false)
@@ -143,7 +143,7 @@ lookup_class= false)
         print "Disconnected", msg
 
 
----small camera code---
+###small camera code###
 import numpy as np
 import cv2
 import time
@@ -196,7 +196,7 @@ import cv2
    
    $python face_detect.py abba.png haarcascade_frontalface_default.xml -- this is to check a shell...(https://realpython.com)
  
- ---need to add lip reading software with usage of microphone to insert correct name machine learning---
+ ###need to add lip reading software with usage of microphone to insert correct name machine learning###
  
  duration = 5 # minutes
  myrecording = sd.rec (int(duration + fs) . samplerate=fs. channels=1)
