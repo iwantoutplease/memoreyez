@@ -2,6 +2,23 @@
 
 #!/usr/bin/python --v3.8
 
+###socket to a cloud##
+import socket
+
+serverIP = '*server IP or domain*'
+serverPort = () ##I don't know the port
+
+Sock = socket(AF_INET, SOCK_STREAM)
+Sock.connect((serverIP, serverPort))
+while (1):
+f = open ("send-data.txt","r")
+while 1:
+    c = f.readline()
+    if not c:
+        break
+Sock.send(c + '\n')
+
+
 
 memoreyez_APP_FOLDER=$(https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml)
 
@@ -442,6 +459,8 @@ sd.stop()
 
 outputstream
 
+Sock.shutdown(0)
+Sock.close()
 
 
 
