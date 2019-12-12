@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#!/usr/bin/python --v3.8
 
 
 memoreyez_APP_FOLDER=$(https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml)
