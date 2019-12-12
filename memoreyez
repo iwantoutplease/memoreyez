@@ -18,6 +18,15 @@ while 1:
         break
 Sock.send(c + '\n')
 
+import numpy as np
+import cv2
+import time
+import calendar
+  cal = calendar.month (0,1)
+import request
+import threading
+  from threading import thread, event, thread error
+import os
 
 
 memoreyez_APP_FOLDER=$(https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml)
@@ -144,14 +153,6 @@ lookup_class= false)
 
 
 ###small camera code###
-import numpy as np
-import cv2
-import time
-import calendar
-  cal = calendar.month (0,1)
-import request
-import threading
-  from threading import thread, event, thread error
 
 class cam ():
   def__init__(self,url):
@@ -176,7 +177,7 @@ class cam ():
     
     cv2.imashow('cam',img)
 
-import cv2
+
 # get user supplied values
    image path = sys.argv[1]
    cascpath = sys.argv[2]
@@ -204,14 +205,6 @@ import cv2
  sd.default.channels=1
  sd.wait()
 stream.read()
-
-import os
-
-import threading
-
-
-
-import numpy as np
 
 
 
@@ -351,9 +344,7 @@ class ListGenerator:
  ###need to add machine learning to select the best three pictures video stream so client to pick the profile picture###
  
  
-import cv2
-import numpy as np
-import os
+
  
 from os.path import isfile, join
  
