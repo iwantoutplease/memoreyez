@@ -443,7 +443,17 @@ serial number = models.uuidfeild()
 elif img + create_contact = true
  print "match found" 
  print cal
- print to (device)
+ 
+ #read persons name from google contact list
+ import gtts from gTTS
+ s=()  # persons name imported from contact list
+ file = "file.mp3"
+ # initialize tts, create mp3 and play
+tts = gTTS(s, 'en')
+tts.save(file)
+os.system("mpg123 " + file)
+
+
 stream.writer()
 sd.play(myarray,fs)
 sd.stop()
