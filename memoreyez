@@ -40,7 +40,7 @@ CMD=$1
 
  cleanup() {
 
-    echo "Cleanup project [$MEMOREYEZ_APP_PROJECT_NAME] files ..."
+    print "Cleanup project [$MEMOREYEZ_APP_PROJECT_NAME] files ..."
 
     cd $MEMOREYEZ_APP_FOLDER
 
@@ -64,7 +64,7 @@ CMD=$1
 
     
 
-        echo "Project [$MEMOREYEZ_APP_PROJECT_NAME] already exists!"  }  
+        print "Project [$MEMOREYEZ_APP_PROJECT_NAME] already exists!"  }  
 
 
 
@@ -72,11 +72,11 @@ CMD=$1
 
     cd $MEMOREYEZ_APP_FOLDER/scripts
 
-    echo ""
+    print ""
 
-    echo "Add permission label for iOS."
+    print "Add permission label for iOS."
 
-    echo ""
+    print ""
 
     python add-line.py -i ../ios/Runner/Info.plist -n 25 -t '	<key>NSCameraUsageDescription</key>'
 
@@ -88,11 +88,11 @@ CMD=$1
 
     python add-line.py -i ../ios/Podfile -n 3 -t 'platform :ios, '9.0''
 
-    echo ""
+    print ""
 
-    echo "Add permission label for Android."
+    print "Add permission label for Android."
 
-    echo ""
+    print ""
 
     python add-line.py -i ../android/app/src/main/AndroidManifest.xml -n 9 -t '    <uses-feature android:name="android.hardware.camera" />'
 
@@ -135,7 +135,7 @@ CMD=$1
 
   [ ! -n "$1" ] ;then
 
-    echo "Usage: ./project_tools.sh 'create' | 'cleanup'"
+    print "Usage: ./project_tools.sh 'create' | 'cleanup'"
     
     
 ###bluetooth code###
