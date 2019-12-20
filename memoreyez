@@ -27,7 +27,8 @@ import request
 import threading
   from threading import thread, event, thread error
 import os
-
+conda create -n tensorflow_env tensorflow
+ 	conda activate tensorflow_env
 
 memoreyez_APP_FOLDER=$(https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml)
 
