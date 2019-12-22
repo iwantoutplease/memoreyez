@@ -2,10 +2,12 @@
 
 #!/usr/bin/python --v3.8
 
-###socket to a cloud##
+###socket google cloud###
+ #will need to create multiple sockets for different libraries in google cloud#
+
 import socket
 
-serverIP = '*server IP or domain*'
+serverIP = '*google cloud*'
 serverPort = () ##I don't know the port
 
 Sock = socket(AF_INET, SOCK_STREAM)
