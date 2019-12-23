@@ -20,6 +20,59 @@ while 1:
         break
 Sock.send(c + '\n')
 
+###connecting to google library###
+
+from oauth2client.client import GoogleCredentials
+from googleapiclient import discovery
+from googleapiclient import errors
+ ml = discovery.build('ml','v1')
+ project_id = 'projects/{}'.format('memoreyez')
+ request_dict = {'name': 'memoreyez',
+               'description': 'This is a machine learning model entry.'}
+  request = ml.projects().models().create(parent=project_id, body=request_dict)
+  response = request.execute()
+  response = ml.projects().models().create(parent=project_id,
+                                         body=request_dict).execute()
+  try:
+    response = request.execute()
+    print(response)
+    except errors.HttpError, err:
+    # Something went wrong, print out some information.
+    print('There was an error creating the model. Check the details:')
+    print(err._get_reason())
+  from googleapiclient import discovery
+from googleapiclient import errors
+
+# Store your full project ID in a variable in the format the API needs.
+project_id = 'projects/{}'.format('your_project_ID')
+
+# Build a representation of the Cloud ML API.
+ml = discovery.build('ml', 'v1')
+
+# Create a dictionary with the fields from the request body.
+request_dict = {'name': 'your_model_name',
+               'description': 'your_model_description'}
+
+# Create a request to call projects.models.create.
+request = ml.projects().models().create(
+              parent=project_id, body=request_dict)
+
+# Make the call.
+try:
+    response = request.execute()
+    print(response)
+except errors.HttpError, err:
+    # Something went wrong, print out some information.
+    print('There was an error creating the model. Check the details:')
+    print(err._get_reason())
+request = ml.projects().models().versions().delete(
+    name='projects/myproject/models/mymodel/versions/myversion')
+response = request.execute()
+
+some_value = response.get('some_key') or 'default_value'
+
+
+###imports##
 import numpy as np
 import cv2
 import time
@@ -31,7 +84,7 @@ import threading
 import os
 import tensorflow as tf
 
-
+###app/website permissions###
 memoreyez_APP_FOLDER=$(https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml)
 
 memoreyez_APP_ORG=https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml
@@ -142,6 +195,8 @@ CMD=$1
     
     
 ###bluetooth code###
+
+
 import bluetooth, subprocess
 nearby_devices = bluetooth. discover_devices(duration=4,lookup_names= true,
 lookup_class= false)
@@ -181,7 +236,7 @@ class cam ():
     cv2.imashow('cam',img)
 
 
-# get user supplied values
+# get user supplied values#
    image path = sys.argv[1]
    cascpath = sys.argv[2]
 # create the haar cascade
