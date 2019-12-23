@@ -524,7 +524,23 @@ create_contact_url = "http://" + "ip"
 
 alerting a device
 if img = no match
-###create 3 pictures to pick from?
+
+
+###create 3 pictures to pick from###
+   #create python file first training, have a thread create data set,
+   #from data set.prediction.custom
+   #import model training
+ 
+ model_trainer = modeltraining()
+ model_trainer.setmodeltypeasresnet()
+ model_trainer.setdatadirectory ("data set")
+ model_trainer.train model
+    num_objects=3,
+    num_experiments= thread,enhance_data = true
+    batch_size = 32
+    show_networksumary = true
+    
+    
 class device (models.model)+ (phone number)
 serial number = models.uuidfeild() 
 elif img + create_contact = true
