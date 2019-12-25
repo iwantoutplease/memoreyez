@@ -525,6 +525,11 @@ create_contact_url = "http://" + "ip"
 alerting a device
 if img = no match
 
+###adding future value call backs###
+future_value = future_result ()
+ future_value.addcallback (a)
+ futute_value.addcallback (b)
+ future_value.addcallback (c)
 
 ###create 3 pictures to pick from###
    #create python file first training, have a thread create data set,
@@ -539,8 +544,13 @@ if img = no match
     num_experiments= thread,enhance_data = true
     batch_size = 32
     show_networksumary = true
-    
-    
+ 
+ ###printing call backs###
+    #need to link a,b,c to the three pictures at the bottom of the app#
+ print = (future_value(a))
+ print = (future_value(b))
+ print = (future_value(c))
+
 class device (models.model)+ (phone number)
 serial number = models.uuidfeild() 
 elif img + create_contact = true
