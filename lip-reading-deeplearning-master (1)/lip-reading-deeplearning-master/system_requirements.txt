@@ -1,3 +1,0 @@
-cmake
-libboost-python-dev
-libglib2.0-0
