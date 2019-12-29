@@ -1,15 +1,19 @@
 import speech_recognition as sr from pycharm
-
+import names from pypi
 r1= sr.recognizer()
 r2= sr.recognizer()
 
 
  with sr.microphone() as source:
-     print('') #name found in stream
+   >>>names.get_first_name()
+     print('') #first name found in stream
      audio = r1.listen(source)
     
  with sr.microphone() as source:
-      print('') #name of company or relationship 
+    >>>names.get_last_name()
+      print('') #last name found in stream 
       audio = r2.listen (source)
       
  
+$pip install tox coverage
+$./runtest.sh
