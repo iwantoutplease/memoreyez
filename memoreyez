@@ -3,8 +3,7 @@
 #!/usr/bin/python --v3.8
 
 ###socket google cloud###
- #will need to create multiple sockets for different libraries in google cloud#
-
+ 
 import socket
 
 serverIP = '*google cloud*'
@@ -20,56 +19,6 @@ while 1:
         break
 Sock.send(c + '\n')
 
-###connecting to google library###
-
-from oauth2client.client import GoogleCredentials
-from googleapiclient import discovery
-from googleapiclient import errors
- ml = discovery.build('ml','v1')
- project_id = 'projects/{}'.format('memoreyez')
- request_dict = {'name': 'memoreyez',
-               'description': 'This is a machine learning model entry.'}
-  request = ml.projects().models().create(parent=project_id, body=request_dict)
-  response = request.execute()
-  response = ml.projects().models().create(parent=project_id,
-                                         body=request_dict).execute()
-  try:
-    response = request.execute()
-    print(response)
-    except errors.HttpError, err:
-    # Something went wrong, print out some information.
-    print('There was an error creating the model. Check the details:')
-    print(err._get_reason())
-  from googleapiclient import discovery
-from googleapiclient import errors
-
-# Store your full project ID in a variable in the format the API needs.
-project_id = 'projects/{}'.format('your_project_ID')
-
-# Build a representation of the Cloud ML API.
-ml = discovery.build('ml', 'v1')
-
-# Create a dictionary with the fields from the request body.
-request_dict = {'name': 'your_model_name',
-               'description': 'your_model_description'}
-
-# Create a request to call projects.models.create.
-request = ml.projects().models().create(
-              parent=project_id, body=request_dict)
-
-# Make the call.
-try:
-    response = request.execute()
-    print(response)
-except errors.HttpError, err:
-    # Something went wrong, print out some information.
-    print('There was an error creating the model. Check the details:')
-    print(err._get_reason())
-request = ml.projects().models().versions().delete(
-    name='projects/myproject/models/mymodel/versions/myversion')
-response = request.execute()
-
-some_value = response.get('some_key') or 'default_value'
 
 
 ###imports##
@@ -84,55 +33,10 @@ import threading
 import os
 import tensorflow as tf
 
-###app/website permissions###
-memoreyez_APP_FOLDER=$(https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml)
 
-memoreyez_APP_ORG=https://github.com/iwantoutplease/memoreyez/blob/master/Memoreyez.iml
-
-MEMOREYEZ_APP_PROJECT_NAME=ion_sfu_example
-
-CMD=$1
-
-
- cleanup() {
-
-    print "Cleanup project [$MEMOREYEZ_APP_PROJECT_NAME] files ..."
-
-    cd $MEMOREYEZ_APP_FOLDER
-
-    rm -rf android build *.iml ios pubspec.lock test .??????-plugins .metadata .packages .idea  }
-
-
-
-
-
- create() {
-
-    cd $MEMOREYEZ_APP_FOLDER
-
-     [ ! -d "ios" ] && [ ! -d "android" ];then
-
-        print "Create Memoreyez project: name=$MEMOREYEZ_APP_PROJECT_NAME, org=$MEMOREYEZ_APP_ORG ..."
-
-        flutter create --project-name $MEMOREYEZ_APP_PROJECT_NAME --org $MEMOREYEZ_APP_ORG .
-
-        add_permission_label
 
     
 
-        print "Project [$MEMOREYEZ_APP_PROJECT_NAME] already exists!"  }  
-
-
-
- add_permission_label() {
-
-    cd $MEMOREYEZ_APP_FOLDER/scripts
-
-    print ""
-
-    print "Add permission label for iOS."
-
-    print ""
 
     python add-line.py -i ../ios/Runner/Info.plist -n 25 -t '	<key>NSCameraUsageDescription</key>'
 
@@ -172,27 +76,6 @@ CMD=$1
 }
 
 
-
- [ "$CMD" == "create" ];
-
-
-
-    create
-
- [ "$CMD" == "cleanup" ];
-
-    cleanup
-
-
- [ "$CMD" == "add_permission" ];
-
-
-    add_permission_label
-
-  [ ! -n "$1" ] ;then
-
-    print "Usage: ./project_tools.sh 'create' | 'cleanup'"
-    
     
 ###bluetooth code###
 
@@ -255,8 +138,7 @@ class cam ():
    
    $python face_detect.py abba.png haarcascade_frontalface_default.xml -- this is to check a shell...(https://realpython.com)
  
- ###need to add lip reading software with usage of microphone to insert correct name machine learning###
- 
+
  duration = 5 # minutes
  myrecording = sd.rec (int(duration + fs) . samplerate=fs. channels=1)
  sd.default.samplerate = fs
