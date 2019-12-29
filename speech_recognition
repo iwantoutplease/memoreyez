@@ -1,0 +1,15 @@
+import speech_recognition as sr from pycharm
+
+r1= sr.recognizer()
+r2= sr.recognizer()
+
+
+ with sr.microphone() as source:
+     print('') #name found in stream
+     audio = r1.listen(source)
+    
+ with sr.microphone() as source:
+      print('') #name of company or relationship 
+      audio = r2.listen (source)
+      
+ 
