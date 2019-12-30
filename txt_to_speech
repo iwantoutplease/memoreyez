@@ -1,0 +1,16 @@
+###to read the contacts name one a "match" is found
+
+from gtts import gTTS 
+import os
+
+mytext1 = '' #first name
+mytext2 = '' #last name
+
+language = 'en'
+
+myobj = gTTS(text=mytext1,mytext2, lang=language, slow=False)
+
+####the below lines are wrong and I will need to change it from mp3 to direct to the bluetooth speaker####
+myobj.save("welcome.mp3")
+os.system("mpg321 welcome.mp3") 
+
