@@ -30,14 +30,31 @@ source = AndroidStudioProjects/Memoreyez
  
 ##button##
  #edit first name#
- 
-    button = input ('')
+     button = input ('')
+       prs=(Button)findViewById(R.id.Button);
+       prs.button() {
+
+
+                     -----      I have to call that method---
+
+                                                 }
+    });
+   
     
 ##button2##
  #edit last name#
- 
+   
      button2 = input ('')
-     
+          prs=(Button2)findViewById(R.id.Button);
+       prs.button2() {
+
+
+                     -----      I have to call that method---
+
+                                                 }
+    });
+    
+    
 ##other decription box##
  #can add description of the person- company they work for, mom, son, ect#
  
@@ -45,16 +62,56 @@ source = AndroidStudioProjects/Memoreyez
  #edit the other description box#
  
       button3 = input ('')
-      
+           prs=(Button3)findViewById(R.id.Button);
+       prs.button3() {
+
+
+                     -----      I have to call that method---
+
+                                                 }
+    });
+    
+    
 ##imageveiw4##
  #picture from future predictions A#
- 
+     imageveiw4 = import from future predictions (a)
+           prs=(imageveiw4)findViewById(R.id.Button);
+       prs.imageveiw4() {
+
+
+                     -----      I have to call that method---
+
+                                                 }
+    });
+    
+    
 ##imageveiw5##
  #picture from future predictions B#
- 
+     imageveiw5 = import from future predictions (b)
+           prs=(imageveiw5)findViewById(R.id.Button);
+       prs.imageveiw5() {
+
+
+                     -----      I have to call that method---
+
+                                                 }
+    });
+    
+    
 ##imageveiw6##
  #picture from future predictions C#
- 
+     imageveiw6 = import from future predictions (a)
+           prs=(imageveiw6)findViewById(R.id.Button);
+       prs.imageveiw6() {
+
+
+                     -----      I have to call that method---
+
+                                                 }
+    });
+    
+    
+    
 ###need a different screen to appear once an alert is triggered###
  ##picture of the contact##
  
