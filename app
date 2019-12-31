@@ -100,7 +100,7 @@ source = AndroidStudioProjects/Memoreyez
     
 ##imageveiw6##
  #picture from future predictions C#
-     imageveiw6 = import from future predictions (a)
+     imageveiw6 = import from future predictions (c)
            prs=(imageveiw6)findViewById(R.id.Button);
        prs.imageveiw6() {
 
