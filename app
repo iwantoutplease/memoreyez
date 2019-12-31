@@ -1,5 +1,11 @@
 ###The basic app layout###
 
+#
+import android
+droid = android.Android()
+ï¿½
+
+
 source = AndroidStudioProjects/Memoreyez
 
 ##imageveiw3 will be the picture selected from the bottom 3 choices##
