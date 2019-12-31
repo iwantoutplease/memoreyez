@@ -21,23 +21,31 @@ source = AndroidStudioProjects/Memoreyez
   
 ##edittext2##
  #person's first name
- 
- 
+    
+   
 ##edittext3##
  #person's last name
+ 
+   
  
 ##button##
  #edit first name#
  
+    button = input ('')
+    
 ##button2##
  #edit last name#
  
+     button2 = input ('')
+     
 ##other decription box##
  #can add description of the person- company they work for, mom, son, ect#
  
 ##button3##
  #edit the other description box#
  
+      button3 = input ('')
+      
 ##imageveiw4##
  #picture from future predictions A#
  
