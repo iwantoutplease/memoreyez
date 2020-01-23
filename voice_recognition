@@ -88,5 +88,4 @@ f batch_generator(data, batch_size=16)
     calllbacks=callbacks)
     
 ###Save owner's voice to be used as a false input for future data###
- 
- 
+ save = ("custmers voice") 
