@@ -3,15 +3,20 @@ import names from pypi
 r1= sr.recognizer()
 r2= sr.recognizer()
 
+fn = (first_name)
+ln = (last_name)
+
 
  with sr.microphone() as source:
    >>>names.get_first_name()
-     print('') #first name found in stream
+     print('fn') #first name found in stream
+     print ('ln')#last name found in stream
      audio = r1.listen(source)
     
  with sr.microphone() as source:
     >>>names.get_last_name()
-      print('') #last name found in stream 
+      print('fn') 
+      print('ln')
       audio = r2.listen (source)
       
  
