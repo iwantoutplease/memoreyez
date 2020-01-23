@@ -1,6 +1,7 @@
 ###The basic app layout###
 
 #
+import kivy
 import android
 droid = android.Android()
 ï¿½
@@ -8,8 +9,8 @@ droid = android.Android()
 
 source = AndroidStudioProjects/Memoreyez
 
-##imageveiw3 will be the picture selected from the bottom 3 choices##
-
+##imageveiw5 will be the picture selected from the bottom 3 choices##
+print = ('selected_image')
 
 
 
@@ -25,13 +26,25 @@ source = AndroidStudioProjects/Memoreyez
   
   
   
-##edittext2##
+##edittext##
  #person's first name
-    
+    print = ('fn')
    
-##edittext3##
+##edittext2##
  #person's last name
+     print = ('ln')
+     
+##edittext3##
+  #phone number for the contact#
+  prs = ('raw_input')
+  print = ("")
+  
+##edittext4##
+ #additional info such as email address#
+ prs = ('raw_input')
+ print = ("")
  
+
    
  
 ##button##
@@ -60,10 +73,7 @@ source = AndroidStudioProjects/Memoreyez
                                                  }
     });
     
-    
-##other decription box##
- #can add description of the person- company they work for, mom, son, ect#
- 
+
 ##button3##
  #edit the other description box#
  
@@ -78,9 +88,52 @@ source = AndroidStudioProjects/Memoreyez
     });
     
     
-##imageveiw4##
+##other decription box##
+ #can add description of the person- company they work for, mom, son, ect#
+ 
+##button4##
+ #edit the other description box#
+ 
+      button3 = input ('')
+           prs=(Button3)findViewById(R.id.Button);
+       prs.button3() {
+
+
+                     -----      I have to call that method---
+
+                                                 }
+    });
+    
+    
+##imageveiw##
  #picture from future predictions A#
-     imageveiw4 = import from future predictions (a)
+     imageveiw = import from future predictions (a)
+           prs=(imageveiw)findViewById(R.id.Button);
+       prs.imageveiw() {
+
+
+                     -----      I have to call that method---
+
+                                                 }
+    });
+    prs = ('selected_image')
+    
+##imageveiw2##
+ #picture from future predictions B#
+     imageveiw2 = import from future predictions (b)
+           prs=(imageveiw5)findViewById(R.id.Button);
+       prs.imageveiw2() {
+
+
+                     -----      I have to call that method---
+
+                                                 }
+    });
+     prs = ('selected_image')
+    
+##imageveiw4##
+ #picture from future predictions C#
+     imageveiw4 = import from future predictions (c)
            prs=(imageveiw4)findViewById(R.id.Button);
        prs.imageveiw4() {
 
@@ -90,33 +143,7 @@ source = AndroidStudioProjects/Memoreyez
                                                  }
     });
     
-    
-##imageveiw5##
- #picture from future predictions B#
-     imageveiw5 = import from future predictions (b)
-           prs=(imageveiw5)findViewById(R.id.Button);
-       prs.imageveiw5() {
-
-
-                     -----      I have to call that method---
-
-                                                 }
-    });
-    
-    
-##imageveiw6##
- #picture from future predictions C#
-     imageveiw6 = import from future predictions (c)
-           prs=(imageveiw6)findViewById(R.id.Button);
-       prs.imageveiw6() {
-
-
-                     -----      I have to call that method---
-
-                                                 }
-    });
-    
-    
+    prs = ('selected_image')  
     
 ###need a different screen to appear once an alert is triggered###
  ##picture of the contact##
