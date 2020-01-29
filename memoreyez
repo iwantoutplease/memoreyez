@@ -2,11 +2,11 @@
 
 #!/usr/bin/python --v3.8
 
-###socket google cloud###
+###socket to a cloud###
  
 import socket
 
-serverIP = '*google cloud*'
+serverIP = '**'
 serverPort = () ##I don't know the port
 
 Sock = socket(AF_INET, SOCK_STREAM)
@@ -135,120 +135,7 @@ while True:
  
  ###need to add machine learning to select the best three pictures video stream so client to pick the profile picture###
  
- from google.cloud import videointelligence
-
-video_client = videointelligence.VideoIntelligenceServiceClient()
-features = [videointelligence.enums.Feature.LABEL_DETECTION]
-operation = video_client.annotate_video(
-    'gs://cloud-samples-data/video/cat.mp4', features=features)
-print('\nProcessing video for label annotations:')
-
-result = operation.result(timeout=120)
-print('\nFinished processing.')
-
-# first result is retrieved because a single video was processed
-segment_labels = result.annotation_results[0].segment_label_annotations
-for i, segment_label in enumerate(segment_labels):
-    print('Video label description: {}'.format(
-        segment_label.entity.description))
-    for category_entity in segment_label.category_entities:
-        print('\tLabel category description: {}'.format(
-            category_entity.description))
-
-    for i, segment in enumerate(segment_label.segments):
-        start_time = (segment.segment.start_time_offset.seconds +
-                      segment.segment.start_time_offset.nanos / 1e9)
-        end_time = (segment.segment.end_time_offset.seconds +
-                    segment.segment.end_time_offset.nanos / 1e9)
-        positions = '{}s to {}s'.format(start_time, end_time)
-        confidence = segment.confidence
-        print('\tSegment {}: {}'.format(i, positions))
-        print('\tConfidence: {}'.format(confidence))
-    print('\n')
-
- 
-from os.path import isfile, join
- 
-def convert_frames_to_video(pathIn,pathOut,fps):
-    frame_array = []
-    files = [f for f in os.listdir(pathIn) if isfile(join(pathIn, f))]
- 
-    #for sorting the file names properly
-    files.sort(key = lambda x: int(x[5:-4]))
- 
-    for i in range(len(files)):
-        filename=pathIn + files[i]
-        #reading each files
-        img = cv2.imread(filename)
-        height, width, layers = img.shape
-        size = (width,height)
-        print(filename)
-        #inserting the frames into an image array
-        frame_array.append(img)
- 
-    out = cv2.VideoWriter(pathOut,cv2.VideoWriter_fourcc(*'DIVX'), fps, size)
- 
-    for i in range(len(frame_array)):
-        # writing to a image array
-        out.write(frame_array[i])
-    out.release()
- 
-def main():
-    pathIn= './data/'
-    pathOut = 'video.avi'
-    fps = 25.0
-    convert_frames_to_video(pathIn, pathOut, fps)
- 
-if __name__=="__main__":
-    main()
-  
- 
- 
- ##google api acct##
- 
- $pip install --upgrade googgle api-python-client google-auth-oathlib
- from__future__ import print_function
- import pickle
- import os.path
- from googleapiclient.discovery import build
- from google_auth.transport.request import request
- 
- #if modifying these scopes, delete the file token. pickle.
- Scopes =['https:www.googleapis.com/auth/documents.readonly']
- 
- # the ID of a sample document
- Document_ID = '???????????'
- def main():
-    """shows basic usage of the Dos Api.
-       Prints the title of a sample document."""
-       creds= None
-       # The file token.pickle stores the user's access and refresh tokens, and is
-       # created automatically when the authorization flow completes for the first
-       # time
- if os.path.exsist( 'token.pickle'):
-    with open ('token.pickle' , 'rb') as token
-        creds = pickle.load(token)
- # If there are no (valid) credentials available, let user log in.
- if not creds or not creds.valid:
-    if creds and creds.expired and creds.refresh_token:
-       creds.refresh(request())
-    else:
-         flow = InstalledAppFlow. from_client_secrect_file(
-            'credentials.json' , SCOPES)
-         creds = flow.run_local_server (port=0)
-    # Save the credentials for the next run
-    with open ('token.pickle' , 'wb') as token:
-        pickle.dump (creds, token)
- service = build ('docs' , 'v1' ,credentials=creds)
- 
- # Retreive the documents contents from the docsservice.
- document = service.documents().get(documentId=DOCUMENT_ID). execute()
- 
- print ('the title of the document is: {}' .format(document.get ('title')))
- 
- if __name__ == '__main__':
-       main()
-  
+   
  $python quickstart.py 
  
 def get_contact (contact, user_guide):
@@ -299,7 +186,8 @@ def execute_unix(inputcommand):
    (output, err) = p.communicate()
    return output
 
-a = "()"  #the persons name
+fn= "()"  #first name
+ln= "()" #last name
 
 
 # When everything is done, release the capture
