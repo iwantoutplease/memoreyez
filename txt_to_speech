@@ -1,15 +1,15 @@
 ###to read the contacts name one a "match" is found
 
 
-if customers voice = true then input = false
-elif customers voice = false then input = true
+if (customers_name) = true then input = false
+elif (customers voice) = false then input = true
 
 
 from gtts import gTTS 
 import os
-import names
-fn = '' #first name
-ln = '' #last name
+import names from pypi
+fn = ('') #first name
+ln = ('') #last name
 
 language = 'en'
 
