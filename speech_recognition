@@ -7,6 +7,8 @@ fn = (first_name)
 ln = (last_name)
 
 
+print = ("say your first and last name")
+
  with sr.microphone() as source:
    >>>names.get_first_name()
      print('fn') #first name found in stream
@@ -22,3 +24,6 @@ ln = (last_name)
  
 $pip install tox coverage
 $./runtest.sh
+
+
+input = ('fn', 'ln')
