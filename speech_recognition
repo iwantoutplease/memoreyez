@@ -26,4 +26,4 @@ $pip install tox coverage
 $./runtest.sh
 
 
-input = ('fn', 'ln')
+customers_name = ('fn', 'ln')
