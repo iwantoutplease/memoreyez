@@ -14,6 +14,14 @@ from keras.models import sequential
 from keras.optimozers import adam
 from keras.callbacks import Earlystopping, ModelCheckpoint
 
+
+###need to add a button to be pressed to save customers voice/name###
+
+
+print = ("say your first and last name")
+
+
+
 seed = 2020 ###2017 is given in the exmple and may need to be changed to that###
 Data_Dir = 'data/spoken_numbers_pcm/'
 
@@ -88,4 +96,4 @@ f batch_generator(data, batch_size=16)
     calllbacks=callbacks)
     
 ###Save owner's voice to be used as a false input for future data###
- save = ("custmers voice") 
+ save = ('custmers_name') 
