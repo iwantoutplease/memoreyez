@@ -7,7 +7,6 @@ fn = (first_name)
 ln = (last_name)
 
 
-print = ("say your first and last name")
 
  with sr.microphone() as source:
    >>>names.get_first_name()
@@ -26,4 +25,4 @@ $pip install tox coverage
 $./runtest.sh
 
 
-customers_name = ('fn', 'ln')
+
