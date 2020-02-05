@@ -325,22 +325,23 @@ elif img + create_contact = true
 ###alerting device when a match is found###
  #read persons name from  contact list
 
-from gtts import gTTS 
+import subprocess
 
-import os
+def execute_unix(inputcommand):
+   p = subprocess.Popen(inputcommand, stdout=subprocess.PIPE, shell=True)
+   (output, err) = p.communicate()
+   return output
 
-import names from pypi
-language = 'en'
+a = ('fn' , 'ln')
 
+# create wav file
+# w = 'espeak -w temp.wav "%s" 2>>/dev/null' % a  
+# execute_unix(w)
 
+# tts using espeak
+c = 'espeak -ven+f3 -k5 -s150 --punct="<characters>" "%s" 2>>/dev/null' % a 
+execute_unix(c)
 
-##need to designate where to print
- #print to the microphone need to add the code###
-
-
-print = (fn)
-
-print = (ln)
 
 
 
