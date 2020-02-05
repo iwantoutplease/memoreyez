@@ -288,8 +288,6 @@ get_contact_url = "htpp:/" + "ip"
 def create_contact (name, last_name, phone_number, description) + 
 create_contact_url = "http://" + "ip" 
 
-alerting a device
-if img = no match
 
 ###adding future value call backs###
 future_value = future_result ()
@@ -331,8 +329,6 @@ def execute_unix(inputcommand):
    (output, err) = p.communicate()
    return output
 
-fn= "()"  #first name
-ln= "()" #last name
 
 
 # When everything is done, release the capture
