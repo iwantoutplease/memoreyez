@@ -204,6 +204,36 @@ lookup_class= false)
 
 if cv = true then ('fn','ln') = false
 elif cv = false then ('fn','ln') = true
+              
+
+              
+###speech recognition###
+  #used to identify the contacts name#
+
+              
+import speech_recognition as sr from pycharm
+import names from pypi
+r1= sr.recognizer()
+r2= sr.recognizer()
+
+
+ with sr.microphone() as source:
+   >>>names.get_first_name()
+     print('fn') #first name found in the stream
+    
+     audio = r1.listen(source)
+    
+ with sr.microphone() as source:
+    >>>names.get_last_name()
+     
+      print('ln') #last name found in the stream
+      audio = r2.listen (source)
+      
+ 
+$pip install tox coverage
+$./runtest.sh
+
+
 
 
 
