@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #!/usr/bin/python --v3.8
 
 ###socket to a cloud###
@@ -33,6 +31,12 @@ import threading
 import os
 import tensorflow as tf
 
+
+###variables###
+
+fn = ('first_name')
+ln = ('last_name')
+cv = ('customers_voice')
 
 
     
@@ -75,7 +79,109 @@ import tensorflow as tf
     python add-line.py -i ../android/app/scr/main/AndroidManifest.xml -n 18 -t '    <uses-permission android:name+"android.permission.Change_System_Settings" />' 
 }
 
+###voice recognition###
 
+##voice recognition to identify who is talking###
+  #This will be used as intial setup for the app#
+
+import glob
+import numpy as np
+import random
+import names from pypi
+import librosa
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import labelBinarizer
+
+import keras
+from keras.layers import LSTM, dense, dropout, flatten
+from keras.models import sequential
+from keras.optimozers import adam
+from keras.callbacks import Earlystopping, ModelCheckpoint
+
+
+###need to add a button to be pressed to save customers voice/name###
+
+
+print ("say your first and last name")
+
+
+
+seed = 2020 ###2017 is given in the exmple and may need to be changed to that###
+Data_Dir = 'data/spoken_numbers_pcm/'
+
+files = glob. glob(Data_Dir + "*.wav")
+X_train, X_val = train_test_split(files, test_size=0.2, random_state = SEED)
+
+print ('# Traning examples: {} '.format(len(X_train)))
+print ('# Validation examples: {}'.format (len(X_val)))
+
+labels = []
+   for i in range (len(X_train)):
+        label = X_train [i].split('/'[-1].split('_')[1]
+        if label not in labels:
+             labels.append(label)
+print (labels)
+
+label_binarizer = labelbinarizer()
+label_binarizer .fit(list(set(labels)))
+
+def one_hot_enode(x): return label_binarizer.transform(x)
+
+n_features = 20
+max_length = 80
+n_classes = len(labels)
+
+f batch_generator(data, batch_size=16)
+   while 1:
+       random.shuffle(data)
+       x, y = [] , []
+       for i in range(batch_size):
+           wav = data [i]
+           wave, sr = librosa.load(wav, mono = true)
+           label = wav.split ('/')[-1].split('_')[1]
+           y.append(one_hot_encode(label))
+           mfcc = librosa.feature.mfcc(wave , sr)
+           mfcc = np.pad(mfcc, ((0,0), (0, max_length-
+           len(mfcc[0]))), mode = 'constant',constant_value=0)
+           x.append(np.array(mfcc))
+     yield np.array(x), np.array(y)
+     
+     
+ learning_rate = 0.001
+ batch_size = 64
+ n_epochs = 50
+ dropout = 0.5
+ 
+ input_shape = (n_features, max_length)
+ steps_per_epoch = 50
+ 
+ model = Sequential()
+ model.add (LSTM(256, return_sequences=true,
+    dropout=dropout))
+ model.add(flattten())
+ model.add(Dense(128, activation= 'relu'))
+ model.add(Dropout(dropout))
+ model.add(Dense(n_classes, activation='softmax'))
+ 
+ opt = Adam(lr=learning_rate)
+   model.compile(loss='catogorical_crosstropy', optimizer= opt,
+   metrcs=['accuracy'])
+   model.summary()
+   
+ callbacks = [ModelCheckpoint('checkpoints/voice_recognition_best_model_{epoch:02d}.hdfS' , save_best_only=True).
+ 
+ history = model.fit_generator(
+    generator=batch_generator(X_train, batch_size),
+    steps_per_epoch=steps_per_epoch,
+    epochs=n_epochs,
+    verbose=1
+    validation_data=batch_generator(X_val, 32)
+    validation_steps=5
+    calllbacks=callbacks)
+    
+###Save owner's voice to be used as a false input for future data###
+
+ 
     
 ###bluetooth code###
 
@@ -91,6 +197,15 @@ lookup_class= false)
         print "Connected", msg
     elif state == "DISCONNECTED":
         print "Disconnected", msg
+        
+        
+        
+### ignoring customer' voice###
+
+if cv = true then ('fn','ln') = false
+elif cv = false then ('fn','ln') = true
+
+
 
 ###face detection code###
 
