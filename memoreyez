@@ -320,15 +320,45 @@ serial number = models.uuidfeild()
 elif img + create_contact = true
  print "match found" 
  print cal
- 
- #read persons name from google contact list
-import subprocess
 
-def execute_unix(inputcommand):
-   p = subprocess.Popen(inputcommand, stdout=subprocess.PIPE, shell=True)
-   (output, err) = p.communicate()
-   return output
+              
+###alerting device when a match is found###
+ #read persons name from  contact list
 
+from gtts import gTTS 
+
+import os
+
+import names from pypi
+language = 'en'
+
+
+
+##need to designate where to print
+ #print to the microphone need to add the code###
+
+
+print = (fn)
+
+print = (ln)
+
+
+
+
+
+myobj = gTTS(text=mytext1,mytext2, lang=language, slow=False)
+
+
+
+####the below lines are wrong and I will need to change it from mp3 to direct to the bluetooth speaker####
+
+
+
+
+
+myobj.save("welcome.mp3")
+
+os.system("mpg321 welcome.mp3") 
 
 
 # When everything is done, release the capture
