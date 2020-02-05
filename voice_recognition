@@ -19,7 +19,7 @@ from keras.callbacks import Earlystopping, ModelCheckpoint
 ###need to add a button to be pressed to save customers voice/name###
 
 
-print = ("say your first and last name")
+print ("say your first and last name")
 
 
 
@@ -97,4 +97,7 @@ f batch_generator(data, batch_size=16)
     calllbacks=callbacks)
     
 ###Save owner's voice to be used as a false input for future data###
- save = ('custmers_name') 
+ cv = ('custmers_voice')
+ 
+ 
+ 
