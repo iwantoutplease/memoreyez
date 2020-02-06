@@ -325,41 +325,10 @@ elif img + create_contact = true
 ###alerting device when a match is found###
  #read persons name from  contact list
 
-import subprocess
-
-def execute_unix(inputcommand):
-   p = subprocess.Popen(inputcommand, stdout=subprocess.PIPE, shell=True)
-   (output, err) = p.communicate()
-   return output
-
-a = ('fn' , 'ln')
-
-# create wav file
-# w = 'espeak -w temp.wav "%s" 2>>/dev/null' % a  
-# execute_unix(w)
-
-# tts using espeak
-c = 'espeak -ven+f3 -k5 -s150 --punct="<characters>" "%s" 2>>/dev/null' % a 
-execute_unix(c)
-
-
-
-
-
-
-myobj = gTTS(text=mytext1,mytext2, lang=language, slow=False)
-
-
-
-####the below lines are wrong and I will need to change it from mp3 to direct to the bluetooth speaker####
-
-
-
-
-
-myobj.save("welcome.mp3")
-
-os.system("mpg321 welcome.mp3") 
+import pyttsx
+engine = pyttsx.init()
+engine.say('fn', 'ln')
+engine.runAndWait()
 
 
 # When everything is done, release the capture
